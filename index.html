@@ -1,0 +1,711 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Win98 Desktop — Stories</title>
+  <link rel="stylesheet" href="https://unpkg.com/98.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <audio id="bg-music" src="media/background.wav" loop></audio>
+  <audio id="click-snd" src="media/click.wav" preload="auto"></audio>
+
+  <div id="taskbar" class="window">
+    <div class="title-bar">
+      <div class="title-bar-text">Start</div>
+      <div class="title-bar-controls"></div>
+    </div>
+    <div class="window-body taskbar-body">
+      <button class="btn" id="btn-mute">🔇 Mute</button>
+      <button class="btn" id="btn-unmute">🔊 Unmute</button>
+      <div class="clock" id="clock"></div>
+    </div>
+  </div>
+
+  <main id="desktop">
+    <h1 class="sr-only">Desktop</h1>
+    <section class="icon-grid">
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-1')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-1')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 1</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-2')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-2')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 2</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-3')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-3')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 3</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-4')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-4')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 4</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-5')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-5')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 5</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-6')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-6')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 6</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-7')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-7')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 7</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-8')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-8')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 8</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-9')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-9')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 9</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-10')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-10')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 10</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-11')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-11')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 11</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-12')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-12')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 12</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-13')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-13')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 13</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-14')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-14')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 14</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-15')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-15')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 15</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-16')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-16')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 16</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-17')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-17')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 17</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-18')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-18')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 18</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-19')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-19')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 19</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-20')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-20')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 20</span>
+      </div>
+    </section>
+
+    <div id="win-story-1" class="window win" style="left:160px; top:90px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">Story 1 — Your Title Here</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-1')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Replace this with your Story 1. You can add multiple images, audio, and video below.</p>
+        <figure class="story-media">
+          <img src="assets/sample1.jpg" alt="Sample 1" />
+          <figcaption>Sample image 1 — replace with your own.</figcaption>
+        </figure>
+        <figure class="story-media">
+          <img src="assets/sample2.jpg" alt="Sample 2" />
+          <figcaption>Sample image 2 — replace with your own.</figcaption>
+        </figure>
+        <div class="media-row">
+          <audio controls preload="metadata">
+            <source src="media/background.wav" type="audio/wav" />
+          </audio>
+          <video controls preload="metadata" style="max-width:260px; height:auto;">
+            <source src="media/intro.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+    <div id="win-story-2" class="window win" style="left:180px; top:108px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">Story 2 — Your Title Here</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-2')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Replace this with your Story 2. You can add multiple images, audio, and video below.</p>
+        <figure class="story-media">
+          <img src="assets/sample2.jpg" alt="Sample 2" />
+          <figcaption>Sample image 2 — replace with your own.</figcaption>
+        </figure>
+        <figure class="story-media">
+          <img src="assets/sample3.jpg" alt="Sample 3" />
+          <figcaption>Sample image 3 — replace with your own.</figcaption>
+        </figure>
+        <div class="media-row">
+          <audio controls preload="metadata">
+            <source src="media/background.wav" type="audio/wav" />
+          </audio>
+          <video controls preload="metadata" style="max-width:260px; height:auto;">
+            <source src="media/intro.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+    <div id="win-story-3" class="window win" style="left:200px; top:126px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">Story 3 — Your Title Here</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-3')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Replace this with your Story 3. You can add multiple images, audio, and video below.</p>
+        <figure class="story-media">
+          <img src="assets/sample3.jpg" alt="Sample 3" />
+          <figcaption>Sample image 3 — replace with your own.</figcaption>
+        </figure>
+        <figure class="story-media">
+          <img src="assets/sample1.jpg" alt="Sample 1" />
+          <figcaption>Sample image 1 — replace with your own.</figcaption>
+        </figure>
+        <div class="media-row">
+          <audio controls preload="metadata">
+            <source src="media/background.wav" type="audio/wav" />
+          </audio>
+          <video controls preload="metadata" style="max-width:260px; height:auto;">
+            <source src="media/intro.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+    <div id="win-story-4" class="window win" style="left:220px; top:144px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">Story 4 — Your Title Here</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-4')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Replace this with your Story 4. You can add multiple images, audio, and video below.</p>
+        <figure class="story-media">
+          <img src="assets/sample1.jpg" alt="Sample 1" />
+          <figcaption>Sample image 1 — replace with your own.</figcaption>
+        </figure>
+        <figure class="story-media">
+          <img src="assets/sample2.jpg" alt="Sample 2" />
+          <figcaption>Sample image 2 — replace with your own.</figcaption>
+        </figure>
+        <div class="media-row">
+          <audio controls preload="metadata">
+            <source src="media/background.wav" type="audio/wav" />
+          </audio>
+          <video controls preload="metadata" style="max-width:260px; height:auto;">
+            <source src="media/intro.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+    <div id="win-story-5" class="window win" style="left:240px; top:162px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">Story 5 — Your Title Here</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-5')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Replace this with your Story 5. You can add multiple images, audio, and video below.</p>
+        <figure class="story-media">
+          <img src="assets/sample2.jpg" alt="Sample 2" />
+          <figcaption>Sample image 2 — replace with your own.</figcaption>
+        </figure>
+        <figure class="story-media">
+          <img src="assets/sample3.jpg" alt="Sample 3" />
+          <figcaption>Sample image 3 — replace with your own.</figcaption>
+        </figure>
+        <div class="media-row">
+          <audio controls preload="metadata">
+            <source src="media/background.wav" type="audio/wav" />
+          </audio>
+          <video controls preload="metadata" style="max-width:260px; height:auto;">
+            <source src="media/intro.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+    <div id="win-story-6" class="window win" style="left:260px; top:180px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">Story 6 — Your Title Here</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-6')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Replace this with your Story 6. You can add multiple images, audio, and video below.</p>
+        <figure class="story-media">
+          <img src="assets/sample3.jpg" alt="Sample 3" />
+          <figcaption>Sample image 3 — replace with your own.</figcaption>
+        </figure>
+        <figure class="story-media">
+          <img src="assets/sample1.jpg" alt="Sample 1" />
+          <figcaption>Sample image 1 — replace with your own.</figcaption>
+        </figure>
+        <div class="media-row">
+          <audio controls preload="metadata">
+            <source src="media/background.wav" type="audio/wav" />
+          </audio>
+          <video controls preload="metadata" style="max-width:260px; height:auto;">
+            <source src="media/intro.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+    <div id="win-story-7" class="window win" style="left:280px; top:198px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">Story 7 — Your Title Here</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-7')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Replace this with your Story 7. You can add multiple images, audio, and video below.</p>
+        <figure class="story-media">
+          <img src="assets/sample1.jpg" alt="Sample 1" />
+          <figcaption>Sample image 1 — replace with your own.</figcaption>
+        </figure>
+        <figure class="story-media">
+          <img src="assets/sample2.jpg" alt="Sample 2" />
+          <figcaption>Sample image 2 — replace with your own.</figcaption>
+        </figure>
+        <div class="media-row">
+          <audio controls preload="metadata">
+            <source src="media/background.wav" type="audio/wav" />
+          </audio>
+          <video controls preload="metadata" style="max-width:260px; height:auto;">
+            <source src="media/intro.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+    <div id="win-story-8" class="window win" style="left:300px; top:216px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">Story 8 — Your Title Here</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-8')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Replace this with your Story 8. You can add multiple images, audio, and video below.</p>
+        <figure class="story-media">
+          <img src="assets/sample2.jpg" alt="Sample 2" />
+          <figcaption>Sample image 2 — replace with your own.</figcaption>
+        </figure>
+        <figure class="story-media">
+          <img src="assets/sample3.jpg" alt="Sample 3" />
+          <figcaption>Sample image 3 — replace with your own.</figcaption>
+        </figure>
+        <div class="media-row">
+          <audio controls preload="metadata">
+            <source src="media/background.wav" type="audio/wav" />
+          </audio>
+          <video controls preload="metadata" style="max-width:260px; height:auto;">
+            <source src="media/intro.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+    <div id="win-story-9" class="window win" style="left:320px; top:234px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">Story 9 — Your Title Here</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-9')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Replace this with your Story 9. You can add multiple images, audio, and video below.</p>
+        <figure class="story-media">
+          <img src="assets/sample3.jpg" alt="Sample 3" />
+          <figcaption>Sample image 3 — replace with your own.</figcaption>
+        </figure>
+        <figure class="story-media">
+          <img src="assets/sample1.jpg" alt="Sample 1" />
+          <figcaption>Sample image 1 — replace with your own.</figcaption>
+        </figure>
+        <div class="media-row">
+          <audio controls preload="metadata">
+            <source src="media/background.wav" type="audio/wav" />
+          </audio>
+          <video controls preload="metadata" style="max-width:260px; height:auto;">
+            <source src="media/intro.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+    <div id="win-story-10" class="window win" style="left:340px; top:252px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">Story 10 — Your Title Here</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-10')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Replace this with your Story 10. You can add multiple images, audio, and video below.</p>
+        <figure class="story-media">
+          <img src="assets/sample1.jpg" alt="Sample 1" />
+          <figcaption>Sample image 1 — replace with your own.</figcaption>
+        </figure>
+        <figure class="story-media">
+          <img src="assets/sample2.jpg" alt="Sample 2" />
+          <figcaption>Sample image 2 — replace with your own.</figcaption>
+        </figure>
+        <div class="media-row">
+          <audio controls preload="metadata">
+            <source src="media/background.wav" type="audio/wav" />
+          </audio>
+          <video controls preload="metadata" style="max-width:260px; height:auto;">
+            <source src="media/intro.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+    <div id="win-story-11" class="window win" style="left:360px; top:270px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">Story 11 — Your Title Here</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-11')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Replace this with your Story 11. You can add multiple images, audio, and video below.</p>
+        <figure class="story-media">
+          <img src="assets/sample2.jpg" alt="Sample 2" />
+          <figcaption>Sample image 2 — replace with your own.</figcaption>
+        </figure>
+        <figure class="story-media">
+          <img src="assets/sample3.jpg" alt="Sample 3" />
+          <figcaption>Sample image 3 — replace with your own.</figcaption>
+        </figure>
+        <div class="media-row">
+          <audio controls preload="metadata">
+            <source src="media/background.wav" type="audio/wav" />
+          </audio>
+          <video controls preload="metadata" style="max-width:260px; height:auto;">
+            <source src="media/intro.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+    <div id="win-story-12" class="window win" style="left:380px; top:288px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">Story 12 — Your Title Here</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-12')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Replace this with your Story 12. You can add multiple images, audio, and video below.</p>
+        <figure class="story-media">
+          <img src="assets/sample3.jpg" alt="Sample 3" />
+          <figcaption>Sample image 3 — replace with your own.</figcaption>
+        </figure>
+        <figure class="story-media">
+          <img src="assets/sample1.jpg" alt="Sample 1" />
+          <figcaption>Sample image 1 — replace with your own.</figcaption>
+        </figure>
+        <div class="media-row">
+          <audio controls preload="metadata">
+            <source src="media/background.wav" type="audio/wav" />
+          </audio>
+          <video controls preload="metadata" style="max-width:260px; height:auto;">
+            <source src="media/intro.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+    <div id="win-story-13" class="window win" style="left:400px; top:306px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">Story 13 — Your Title Here</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-13')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Replace this with your Story 13. You can add multiple images, audio, and video below.</p>
+        <figure class="story-media">
+          <img src="assets/sample1.jpg" alt="Sample 1" />
+          <figcaption>Sample image 1 — replace with your own.</figcaption>
+        </figure>
+        <figure class="story-media">
+          <img src="assets/sample2.jpg" alt="Sample 2" />
+          <figcaption>Sample image 2 — replace with your own.</figcaption>
+        </figure>
+        <div class="media-row">
+          <audio controls preload="metadata">
+            <source src="media/background.wav" type="audio/wav" />
+          </audio>
+          <video controls preload="metadata" style="max-width:260px; height:auto;">
+            <source src="media/intro.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+    <div id="win-story-14" class="window win" style="left:420px; top:324px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">Story 14 — Your Title Here</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-14')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Replace this with your Story 14. You can add multiple images, audio, and video below.</p>
+        <figure class="story-media">
+          <img src="assets/sample2.jpg" alt="Sample 2" />
+          <figcaption>Sample image 2 — replace with your own.</figcaption>
+        </figure>
+        <figure class="story-media">
+          <img src="assets/sample3.jpg" alt="Sample 3" />
+          <figcaption>Sample image 3 — replace with your own.</figcaption>
+        </figure>
+        <div class="media-row">
+          <audio controls preload="metadata">
+            <source src="media/background.wav" type="audio/wav" />
+          </audio>
+          <video controls preload="metadata" style="max-width:260px; height:auto;">
+            <source src="media/intro.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+    <div id="win-story-15" class="window win" style="left:440px; top:342px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">Story 15 — Your Title Here</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-15')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Replace this with your Story 15. You can add multiple images, audio, and video below.</p>
+        <figure class="story-media">
+          <img src="assets/sample3.jpg" alt="Sample 3" />
+          <figcaption>Sample image 3 — replace with your own.</figcaption>
+        </figure>
+        <figure class="story-media">
+          <img src="assets/sample1.jpg" alt="Sample 1" />
+          <figcaption>Sample image 1 — replace with your own.</figcaption>
+        </figure>
+        <div class="media-row">
+          <audio controls preload="metadata">
+            <source src="media/background.wav" type="audio/wav" />
+          </audio>
+          <video controls preload="metadata" style="max-width:260px; height:auto;">
+            <source src="media/intro.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+    <div id="win-story-16" class="window win" style="left:460px; top:360px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">Story 16 — Your Title Here</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-16')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Replace this with your Story 16. You can add multiple images, audio, and video below.</p>
+        <figure class="story-media">
+          <img src="assets/sample1.jpg" alt="Sample 1" />
+          <figcaption>Sample image 1 — replace with your own.</figcaption>
+        </figure>
+        <figure class="story-media">
+          <img src="assets/sample2.jpg" alt="Sample 2" />
+          <figcaption>Sample image 2 — replace with your own.</figcaption>
+        </figure>
+        <div class="media-row">
+          <audio controls preload="metadata">
+            <source src="media/background.wav" type="audio/wav" />
+          </audio>
+          <video controls preload="metadata" style="max-width:260px; height:auto;">
+            <source src="media/intro.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+    <div id="win-story-17" class="window win" style="left:480px; top:378px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">Story 17 — Your Title Here</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-17')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Replace this with your Story 17. You can add multiple images, audio, and video below.</p>
+        <figure class="story-media">
+          <img src="assets/sample2.jpg" alt="Sample 2" />
+          <figcaption>Sample image 2 — replace with your own.</figcaption>
+        </figure>
+        <figure class="story-media">
+          <img src="assets/sample3.jpg" alt="Sample 3" />
+          <figcaption>Sample image 3 — replace with your own.</figcaption>
+        </figure>
+        <div class="media-row">
+          <audio controls preload="metadata">
+            <source src="media/background.wav" type="audio/wav" />
+          </audio>
+          <video controls preload="metadata" style="max-width:260px; height:auto;">
+            <source src="media/intro.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+    <div id="win-story-18" class="window win" style="left:500px; top:396px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">Story 18 — Your Title Here</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-18')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Replace this with your Story 18. You can add multiple images, audio, and video below.</p>
+        <figure class="story-media">
+          <img src="assets/sample3.jpg" alt="Sample 3" />
+          <figcaption>Sample image 3 — replace with your own.</figcaption>
+        </figure>
+        <figure class="story-media">
+          <img src="assets/sample1.jpg" alt="Sample 1" />
+          <figcaption>Sample image 1 — replace with your own.</figcaption>
+        </figure>
+        <div class="media-row">
+          <audio controls preload="metadata">
+            <source src="media/background.wav" type="audio/wav" />
+          </audio>
+          <video controls preload="metadata" style="max-width:260px; height:auto;">
+            <source src="media/intro.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+    <div id="win-story-19" class="window win" style="left:520px; top:414px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">Story 19 — Your Title Here</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-19')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Replace this with your Story 19. You can add multiple images, audio, and video below.</p>
+        <figure class="story-media">
+          <img src="assets/sample1.jpg" alt="Sample 1" />
+          <figcaption>Sample image 1 — replace with your own.</figcaption>
+        </figure>
+        <figure class="story-media">
+          <img src="assets/sample2.jpg" alt="Sample 2" />
+          <figcaption>Sample image 2 — replace with your own.</figcaption>
+        </figure>
+        <div class="media-row">
+          <audio controls preload="metadata">
+            <source src="media/background.wav" type="audio/wav" />
+          </audio>
+          <video controls preload="metadata" style="max-width:260px; height:auto;">
+            <source src="media/intro.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+    <div id="win-story-20" class="window win" style="left:540px; top:432px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">Story 20 — Your Title Here</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-20')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Replace this with your Story 20. You can add multiple images, audio, and video below.</p>
+        <figure class="story-media">
+          <img src="assets/sample2.jpg" alt="Sample 2" />
+          <figcaption>Sample image 2 — replace with your own.</figcaption>
+        </figure>
+        <figure class="story-media">
+          <img src="assets/sample3.jpg" alt="Sample 3" />
+          <figcaption>Sample image 3 — replace with your own.</figcaption>
+        </figure>
+        <div class="media-row">
+          <audio controls preload="metadata">
+            <source src="media/background.wav" type="audio/wav" />
+          </audio>
+          <video controls preload="metadata" style="max-width:260px; height:auto;">
+            <source src="media/intro.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <div id="intro-video-win" class="window win modal open" style="width:80vw; left:10vw; top:10vh;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">Welcome Video</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="closeWindow('intro-video-win')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <video id="intro-video" playsinline controls style="width:100%; height:auto;">
+          <source src="media/intro.mp4" type="video/mp4">
+          <p>Your browser does not support the video tag.</p>
+        </video>
+        <p class="note">Replace <code>media/intro.mp4</code>. The site tries to autoplay it with sound; if blocked, use controls.</p>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

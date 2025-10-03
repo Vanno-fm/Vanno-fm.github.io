@@ -78,21 +78,6 @@ function tryPlayBackground(){
 
 if(btnMute) btnMute.addEventListener('click', ()=>{ uiClick(); if(bg){ bg.muted = true; }});
 if(btnUnmute) btnUnmute.addEventListener('click', ()=>{ uiClick(); if(bg){ bg.muted = false; bg.play().catch(()=>{}); }});
-
-function initIntroVideo(){
-  const win = document.getElementById('intro-video-win');
-  const vid = document.getElementById('intro-video');
-  if(!win || !vid) return;
-  win.classList.add('open'); focusWindow('intro-video-win');
-  vid.volume = 1.0;
-  vid.play().catch(()=>{
-    vid.muted = true;
-    vid.play().then(()=>{
-      const enable = ()=>{ vid.muted=false; document.removeEventListener('click', enable); document.removeEventListener('keydown', enable); };
-      document.addEventListener('click', enable, {once:true});
-      document.addEventListener('keydown', enable, {once:true});
-    }).catch(()=>{});
-  });
 }
 
 document.addEventListener('click', (e)=>{

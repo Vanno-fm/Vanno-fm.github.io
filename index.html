@@ -706,6 +706,15 @@
     </div>
   </main>
 
+<p> trying to add cursor effects here.</p>
+  <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
+  window.addEventListener("load", (event) => {
+  new cursoreffects.ghostCursor();
+});
+  const targetElement = document.querySelector("#ghost");
+  new cursoreffects.ghostCursor({ element: targetElement });
+
+  
   <script src="script.js"></script>
 </body>
 </html>

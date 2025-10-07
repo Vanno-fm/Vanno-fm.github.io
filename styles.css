@@ -41,25 +41,21 @@ body {
 #intro-overlay {
   position: fixed;
   inset: 0;
-  z-index: 9999;            /* above everything */
-  background: #000;
+  z-index: 9999;
+  background: #000;        /* black background */
   display: grid;
   place-items: center;
   overflow: hidden;
 }
-
-/* Make video fill the screen without borders */
 #intro-video {
   width: 100vw;
   height: 100vh;
-  object-fit: cover;        /* crop while keeping aspect ratio */
+  object-fit: cover;
   display: block;
 }
-
-/* Optional: hide scroll and pointer events behind overlay */
-html.intro-active, body.intro-active {
-  overflow: hidden;
-}
+html.intro-active, body.intro-active { overflow: hidden; }
+#skip-intro { position: absolute; right: 1rem; bottom: 1rem; }
+#tap-to-start { position: absolute; inset: auto 0 20%; margin: 0 auto; }
 
 /* Skip button (optional) */
 #skip-intro {

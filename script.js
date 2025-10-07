@@ -1,9 +1,5 @@
 let topZ = 10;
 
-function initIntroVideo() {
-  // placeholder: load or hide the intro video
-}
-
 function uiClick() {
   const click = document.getElementById('click-snd');
   if (!click) return;

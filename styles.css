@@ -37,3 +37,49 @@ body {
 
 .window .title-bar[data-drag-handle] { cursor: move; }
 
+/* Intro overlay covers the whole page */
+#intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #000;        /* black background */
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+#intro-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  display: block;
+}
+html.intro-active, body.intro-active { overflow: hidden; }
+#skip-intro { position: absolute; right: 1rem; bottom: 1rem; }
+#tap-to-start { position: absolute; inset: auto 0 20%; margin: 0 auto; }
+
+/* Skip button (optional) */
+#skip-intro {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  padding: .5rem .8rem;
+  font: 14px/1 system-ui, sans-serif;
+  border: 1px solid #fff8;
+  background: #0008;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* “Tap to start” fallback text when autoplay is blocked */
+#tap-to-start {
+  position: absolute;
+  inset: auto 0 20%;
+  margin-inline: auto;
+  width: max-content;
+  padding: .6rem .9rem;
+  font: 16px/1.2 system-ui, sans-serif;
+  color: #fff;
+  background: #0009;
+  border: 1px solid #fff6;
+  border-radius: 6px;
+}

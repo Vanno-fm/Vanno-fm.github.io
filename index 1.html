@@ -1,0 +1,727 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Win98 Desktop — Stories</title>
+  <link rel="stylesheet" href="https://unpkg.com/98.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <audio id="bg-music" src="media/background.wav" loop></audio>
+  <audio id="click-snd" src="media/click.wav" preload="auto"></audio>
+
+
+  <audio id="bg-music" src="media/background.wav" loop autoplay muted></audio>
+
+  <div id="taskbar" class="window">
+    <div class="title-bar">
+      <div class="title-bar-text">Start</div>
+      <div class="title-bar-controls"></div>
+    </div>
+    <div class="window-body taskbar-body">
+      <button class="btn" id="btn-mute">🔇 Mute</button>
+      <button class="btn" id="btn-unmute">🔊 Unmute</button>
+      <div class="clock" id="clock"></div>
+    </div>
+  </div>
+
+  <main id="desktop">
+    <h1 class="sr-only">Desktop</h1>
+    <section class="icon-grid">
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-1')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-1')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 1</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-2')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-2')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 2</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-3')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-3')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 3</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-4')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-4')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 4</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-5')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-5')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 5</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-6')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-6')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 6</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-7')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-7')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 7</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-8')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-8')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 8</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-9')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-9')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 9</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-10')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-10')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 10</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-11')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-11')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 11</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-12')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-12')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 12</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-13')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-13')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 13</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-14')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-14')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 14</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-15')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-15')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 15</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-16')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-16')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 16</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-17')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-17')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 17</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-18')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-18')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 18</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-19')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-19')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 19</span>
+      </div>
+      <div class="desktop-icon" tabindex="0"
+           onclick="uiClick(); openWindow('win-story-20')"
+           onkeypress="if(event.key==='Enter'){uiClick(); openWindow('win-story-20')}">
+        <img src="icons/story.png" alt="" width="32" height="32" />
+        <span>Story 20</span>
+      </div>
+    </section>
+
+
+
+
+
+
+    
+    <div id="win-story-1" class="window win" style="left:160px; top:90px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">I yearn for a ghost</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-1')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>remember an apparition of a heavy warm weight on my chest, breaths becoming slowly
+intertwined until eventually syncing into a slow melodic hymn. I remember the warmth of a small
+pink star welling, pooling and forming the feeling of protection never before or since felt. A
+feeling so raw and vulnerable, never to be duplicated and near impossible to describe. I’m
+chasing the feeling of protection that is now lost to time, sand that whisked away from my
+fingers and into the ever changing winds.
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+I remember how utterly terrified I was, every moment I thought of every potential downfall and
+mistake. The feeling of shame and failure permeated my brain, and instead of fighting I became
+a coward. I let go of the thing I dreamt about for years. I know it was the right thing for her, yet I
+still miss the feeling I had on that leather couch. The uncomfortable ache in my body gave me
+comfort, the feeling of dread on my way home at 2am was worth it to spend time.
+But that no-longer exists, she moved on. I’m stuck in the past, occasional familiar smells or
+colors remind me of all that happened. Flashbacks to traumas that my brain pretends were a
+fabrication. Smiles in a crowd even remind me of that warmth. I know it’s not right, I’m irrational
+and it’s over but I still occasionally dream about a fire that was extinguished long ago.
+Angel numbers keep guiding me in a way, life is worth something even if i don’t enjoy it right
+now.
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+They say to love others you must first love yourself, so I have work to be done. Because I'm not
+going to repeat my failures, I want the next time I feel that security to be one where I can
+express my gratitude sincerely. I’m sorry to the ones if hurt, and i am thankful you allow me to
+be in your mind at all.
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+She turned to a whirlwind of sand, sifting through my fingers and into the endless pits beneath.
+With the dunes growing disdain for my presence, the feet that once held firm began to slowly
+submerge into the sharp granules. The further he sunk into the depths, with sand slowly etching
+into his sides and carving into his face's features, the sand began to heat. For he was on the
+precipice of hell, heat turning sand into a clear glass. What once offered peace scalded his
+being to its very core, yet remained invisible now, transparent but present</p>
+        </div>
+      </div>
+    </div>
+    <div id="win-story-2" class="window win" style="left:180px; top:108px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">Pile</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-2')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Unassuming, a little pile of blankets and hoodies lay on the same spot every day. To the
+average onlooker it’s just a pile of clothes, a few hoodies that need some folding or maybe need
+some hangers. A blanket out of place or used as an extra bit of warmth on a cold night. Maybe
+to be warm in the office chair?
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+But to me they are a mountain. A blockade to the simple bit of rest I want at the end of the day.
+One last push to get to the safe space of the night. The beauty of have zero expectations, zero
+worries, a nice dark room, and no talking. Just star gazing and soft music to whisper a chorus of
+sweet heartbreaks in my ears.
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+But still, the pile remains. It’s only there because I couldn’t muster the energy to fold it all. I get
+like this every now and then. I’ll slowly start hating myself, seeing my own flaws more and more
+and then basic tasks grow more and more difficult. I have high standards for myself but I feel
+like I never do enough to reach them. It’s hard to love someone that doesn’t love themselves.
+So the pile becomes one last hurdle.
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+A slow grapple on the clothes and one nice heave lands them on my office chair to perpetuate
+the cycle on day longer. The mountain still stands, no cracks in its foundation.
+One day my music will hit different, food will taste better, progress will speed up, friends will
+hang out more, and all the sudden that pile will disappear into thin air.
+I hope it does soon</p>
+        </div>
+      </div>
+    </div>
+    <div id="win-story-3" class="window win" style="left:200px; top:126px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">Cumulus</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-3')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>I live for moments like this, as wind sways the grasses envelop me. I can feel the warmth of the
+sun on my chest, my back cooled from the ground beneath me. The sky is so beautiful these
+days. Thick cumulus clouds blanket the sky in overarching ribbons, allowing a brilliant blue to
+shine through in thin ravines and valleys. As the clouds slowly dance along the sky, new
+patterns emerge and vanish into view as if god was painting the heavens with a brush of the
+familiar brilliant blue.
+          
+Day turns to night bringing another wonder of nature above all of its creatures. Cold lights
+encroach on the days territory until eventually shinning through in the infinite void. The
+diamonds in the sky turn to constellations of tales yet to passed on before eventually
+overflowing into an ocean of glimmer. streams of brilliant greens, purples, and blues slowly give
+way into curving rivers slowly gliding across the night sky as temperatures slowly drop.
+As humans we take these natural beauties for granted because of how familiar they become.
+Ever constant in our lives as we ants struggle on the ground in our medial tasks. But not the sky,
+it’s on purpose is to hold the limitless potential of the universe and remind us of its majesty.
+From the dark oceans that the leviathans roam, to the wings of a butterfly traveling to pollinate
+the roses, to the explosive brilliance of a firework ceremony. I’ll never take them for granted
+again.
+         
+“What are you looking at dork”, a shock shoots up my spine as I snap to reality. Red flushes my
+face as I try to think of a single thing to say. Caught in a daydream after focusing in on her eyes
+for maybe a tad to long to be unnoticed.
+          
+“Have I ever told you that your eyes are pretty?</p>
+        </div>
+      </div>
+    </div>
+    <div id="win-story-4" class="window win" style="left:220px; top:144px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">Roses</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-4')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>“She loves me, she loves me not”
+Another rose petal graces the blades of grass with an effortless elegance that a living creature
+dreams to replicate. Roses bring him peace when the world seems to crumble into ash. Every
+night when the clock strikes midnight and all of gods creatures hum in a slow melodic drone, he
+tends to the garden.
+          　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+Watering cans, shears, pruners, trowel, and others liter the ground as if it were a crime scene.
+Sweat drips as work manifests, the rose bush decided to sprout just outside the cottage window
+so it is given the love it deserves for it to grow. Many others would have left it, others would
+have dug it out but the farmer was appreciative of its generosity.
+          　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+From once just a bud, slowly creeping into the sunshine rays as if not to draw in predators, now
+sprouts a beautiful bush ever-changing and evolving as days turn to months. While some days
+the distance seems impossible to surmount, and others are mere step away, the watering can
+will still always glisten its roots with nourishment before the sun rises again.
+          　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+No matter how confused, nor frightful his life has been, he always tends to his garden. For the
+garden choose to be by his side, he returns the favor. Roses are a beauty he fears will not grace
+him again, and no matter his trials, the roses will never wilt alone.
+          　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+The farmer prays for his hands to never graces a pesticide, for many flowers have fallen to his
+black thumb. He still remembers them, but none were as beautiful or everlasting as the roses.
+Surviving every season with ease and happily swaying in the wind no matter the hellfire
+surrounding them. For they are special, he is not and is thankful they picked such a place to call
+home.</p>
+        </div>
+      </div>
+    </div>
+    <div id="win-story-5" class="window win" style="left:240px; top:162px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">The smell of decay</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-5')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>My once green sweatshirt is now covered in death. It makes me sick to my stomach as I see the
+viscera soak through the fabric and spread its plague into the bed beneath it, leaving a stain of
+misery ever darkening and growing on the freshly washed duvet cover.　　　　
+          　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+It’s been months, salvaging the blanket has grown to become a Herculean task that is left to be
+unanswered. Every single product that gives the hope of removing a stain has fought the battle
+within the woven threads but all of them were false prophets. The black tar of decay has slowly
+encroached farther within my home. It decrepitly sinks into the soft memory foam mattress and
+the once vibrant and comfortingly thick rug, now damp and dark with the blood soaked into the
+surface area. Pooling dark circles fill every footstep within its reach as if it were freshly soaked
+soil from a torrential rainfall.
+
+          　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+The smell of death, a fog growing ever more dense billows with hatred and persistence as if
+there were an attempted arson. Its smoke permeates my home, my clothes, and now my mind.
+It remains invisible until the smell returns, the location may be random but the smell is the same.
+So pinpoint that it pierces my brain deep to its core, a 12 gauge clearing the top of my skull and
+painting the the fan above me. The smell of cherry blossom becomes a calling sign for the
+reaper.　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+          　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+A willing suicide lays on the mattress, wrists slit with its eyes half open. Slow gasps rattle out of
+its ribcage as the remaining life slowly seeps into the area surround its final resting place. The
+knife lodged in its abdomen so deep that it cracks its spine, a once yellow blade is now a dark,
+bubbling maroon.
+          　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+It lays there with a smile, a slight grin on the otherwise soaked face.
+Innocence now dead, with its only fading memory being the smell of her perfume and the
+warmth of the steel dagger used to etch his heart, he slowly drifts to the void. Consciousness
+slowly fading with his last memories being of looking into his own opaque eyes. Just another
+victim of circumstance, another heartbreak for her but a suicide note for him. Reduced to a
+number in her memory.
+          　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+A sharp gasp echos, crusted red eyes open and scan the newly discovered surroundings with a
+pounding headache and blurred vision. Thick overarching spruce trees loam overhead casting a
+shadow over his frame in the moonlight’s rays that splatter on the sidewalk. In front lays a
+wooden door connected to a familiar home, an innocent visual that still manages to manifest the
+bubbling resentment of his own shortcomings.
+          　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+Every slow crunchy step towards his destination leaves a blood trail that an outdoorsman would
+cry tears of joy over. By the final step the man seemed to be close to fainting, barely collecting
+enough composure to numbly press the ancient doorbell. Peering down at the new scars left in
+her wake, with a hoodie in hand, a new man folds his once prized possession and slowly bends
+down to leave it at her doorstep. A new beginning, growth’s familiar suffering, and a now distant
+smell of decay that will forever leave shockwaves</p>
+        </div>
+      </div>
+    </div>
+    <div id="win-story-6" class="window win" style="left:260px; top:180px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">The Alter</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-6')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>A cathedral loams in the distance with faint glow of candle light, imposing itself on the silky black
+blanket of the night sky decorated in stars so vibrant they seem to be windows into the sun
+themselves. A red glow illuminates from the west, signaling a battle that tolls the bell to the end
+of a countries prosperity.
+          　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+Heavy clanks grow from the distance, turning to a solitary march as a singular knight treks
+through the winding stone paved roadway. A warrior once filled with a valiant effort to rival an
+army now places a tattered glove onto the cathedral’ leviathan worthy door and budges it open
+with all the might his bloodied and broken exterior can muster. With fire slowly engulfing the
+country side, the life of all creatures native to this region lay responsible in his hand.
+Within the Cathedral is a shockingly peaceful sight, an environment so still it is as if time itself
+was fearful of the wrath it would endure to budge. A goddess lay sprawled in a throne that has
+lost its authority, writhing in pain from the loss she had endured. Although it stands true being
+plated in the world’s finest gold and encrusted with rare gemstones that glimmer in the pink and
+purple lights of the peering though the stained glass window now illuminated by the encroaching
+hellfire.
+          　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+Aphrodite, sobs uncontrollably as the knight crawls into frame, a loaning shadow whipping in the
+candle light loams behind him as he sulks into the now-mortuary. Throwing his, far from intact,
+helmet to the perfectly smooth white surrounding walkway, he stumbles his way to the foot of his
+goddess’s alter. Peering up to see his gods face; slick with sorrow, he now understands her
+sorrow in his presence. Blood slowly pools in her chest as her heart slowly weakens, mortally
+wounded from the inability to protect the lands in-between.
+          　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+Now with a heavy heart, only one option remains. For he failed to protect her from the flames of
+war now slowly crackling and engulfing the cathedral, a worthy sacrifice will restore her vitality.
+Flames slowly crawl past the doorway and singe the white silk as he begins to kneel. One last
+exhale, his head lowers its focus to the earth below, drips of blood now forming. Her endured
+suffering continues to slowly drip down her dress as a scrape fills the air.
+The knight, broken from battles previous slowly removes the blackened chest plate from his
+torso and places it to the ground at her feet. Eyes widen as her brain tries to process the events
+starting to manifest, powerless to intervene. With one motion, a claymore chipped and eroded
+with a slick red coating enters the air and is turned back towards the hellfire that awaits his
+eternity.
+          　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+Air fills his lungs for the last time before driving all his might into the forearms holding the hilt of
+his own blades . Air is replaced with blood as it enters before he ignites the remaining fire within
+his soul to rip the tecpatl across his chest , increasing the ferocity of viscera drowning him from
+the inside out.
+          　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+Blinding pain scalds his very core before he lays down, finally accomplished. Although he may
+be through, he was able to relay a debt far greater than the man he was. The saving of the
+kingdom was worth the life now flowing from his neck and chest.</p>
+        </div>
+      </div>
+    </div>
+    <div id="win-story-7" class="window win" style="left:280px; top:198px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">Lowkey just fucking ranting</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-7')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Noboy is ever gonna see this shit so I can just speak My mind and It wont matter.
+
+         MOTHER FUCK my parents expectations and limitations. Fuck It all bro genuinley. 
+          I can't fucking wait to move out and become truely and completeley me. 
+          I'm going to dye my hair, Buy the motercycle and gear of my dreams, be more spontanious, 
+          I don't even know because the possibilities would be literally fucking endless. 
+
+          It is going to be so fucking freeing. I can;t wait to finally just move the fuck out.
+          I could finally have a girlfriend over and not have to worry about who was over or if 
+          anyone other than myself approves. I could go ride my bike to the gym everyday. I could
+          Go to all the metal concerts I've wanted to see. I could do literally fucking anything. 
+          I can'tm wait to get tattoos and all the fun things.</p>
+        </div>
+      </div>
+    </div>
+    <div id="win-story-8" class="window win" style="left:300px; top:216px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">silent orchestra</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-8')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>I’m honestly kind of just sick of worrying about people’s unending fucking judgement on my life and 
+the decisions I can or can’t make. I’m fucking tired of having to worry about relationships, going to do things
+I want to do, having to bend a knee and people please out of fucking instinct. I don’t care if the things I find
+exciting are stereotypically dangerous, I just want to go fucking explore my passions. Yeah, I want to use the 
+money I have to buy a motercycle and protective gear and learn how to drive it around. I want to go drive 
+2 or three hours to a city to go explore the music scene and enjoy some concerts. I want to go on hikes 
+the push my limits, I want to try out some new fashion, I want to push the limits of my body to become
+a stronger and better looking man. I want a lot of things but I’m restricted by the shackles connected 
+to the stones of my parents will. I’m locked into a town that is filled with the absence of life and I 
+just want out. I want to be free to go to a fun place, I want to be able to leave my house and not expect 
+my parents to worry about me 24/7, I want to come home with a bike and not get kicked out,
+I want to be fucking free from judgment. 
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+I’m just tired of things being judged as too risky for me. I don’t give a shit anymore about too risky, 
+I want to do it and I am going to go and do it. Ww3 is close and I don’t fucking have time. 
+
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+Blunt, pointless, monotonous 
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+Life feels pointless, an arrow with no broad head. Waiting out the shot clock on life because the 
+coach won’t let me off the bench. It feels like nothing I can do will help me go forward. 
+Perpetually working on meaningless goals that turn into a jail cell. I know this feeling
+will pass and I will be able to do great things, I won’t allow it any other way.
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+July 2nd. 
+Couldn’t sleep so I’m back at it. Same topic so I don’t wanna make a new page.   
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+I keep getting the recurring day dream of slipping into some riding gear and going on a
+sunset ride in the really pretty neighborhood close to my old elementary school. 
+Just gliding on twisty roads and enjoying the breeze through a visor and happy tunes on my cardo. 
+          　　　　　　　　　　　　
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+I realize I haven’t been selfish in a long time. I realize I’m just afraid to act as my true 
+self because that imposes on others that I have worth aswell. I struggle to say no to people 
+and not add value to them even when I don’t want too, get dragged into shit I don’t want to, 
+get guilt tripped easily and get hurt by playful banter easily. 
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+It all stemmed when I realized I wanted something just because I wanted it for once. 
+I want the bike, everyone around me doesn’t respect my decision and looks down on me
+for it but I want it so fucking bad. I just want to explore and experience it. 
+They are okay with committing literal wildlife felonies but me on a bike is too much to ask. 
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+I wish I could just dump my money into it and get it. I want to be selfish this one time. 
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+But I am going to practice being more “selfish” in ways to make my mind better. 
+Make art I like and post it regardless of it bothers people, yearn for the 
+dreams I want without regard for other peoples thoughts, engage in the things 
+I want because I fucking want to. 
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+It all stems from just wanting to ride that bike. 
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+So basically, fuck everyone that makes me uncomfortable or doesn’t give a 
+shit about how I’m doing or doesn’t even ask. I’m doing shit for me. 
+I’m done initiating when I don’t have to and doing it when I want to. 
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+Like that all comes from an inferiority complex I gained ever since I was a kiddo.
+If you aren’t objectively better than, then you aren’t worth it. So it’s a point 
+system based of hate in a way. I can just have something and enjoy it without feeling 
+guilty if I didn’t earn it in a way. Add enough suffering to get joy back. I dunno. 
+I realize I just want love where I am the one that is certain in it, 
+I don’t wanna be the one to choose to leave. 
+　　　　　　　　　　　　　　　　　　　　
+(Once again can’t sleep)
+Must be this calorie deficit kickin my ass. I really wanna raid the pizza in the kitchen. Fuckkkkk that would be fire. 
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+I lost my safety net on talking about this shit so I guess we do it the old fashion way, pen and paper. 
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+Man do I hate being stuck here. I feel like I’m window shopping through piles of fun 
+things to try and I’m stuck on the opposite side of the glass. For me the doors locked 
+and I can just watch my friend go in perfectly fine without me. I dunno I just feel so trapped. 
+And my first reaction is to side with my parents and be like well it is dangerous but that’s just 
+the inferiority shit again, god damnit. FUCK I am done with this shit. I just wanna DO. Go and do 
+shit with or without anyone’s approval or attendance. Fuck everyone except my day ones. 
+If they don’t even wish my happy birthday then they can kill themselves. 
+
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+Alittle ego death motivation (alt insta account)
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+If you are no different or special compared to anyone else that means you are 
+just as capable as the people succeeding around you. Allow yourself to fail and 
+grow. Allow yourself to struggle and triumph over your goals. Love yourself 
+because you don’t need to be special, you need to be yourself and allow yourself the chance to try. 
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+Mfs forget progressive overload, being okay with failure, and allowing yourself to rest after a hard set the second they leave the gym. 
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+July 2nd (side note) 
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+I forget why I don’t like hanging with my family but Jesus Christ my sister is a negativity
+fountain over the smallest shit, my mom seems to always be bringing up a fatal crash or accident 
+to be too fucking worried over, and my dad is mad half the time but gets me. FUCK. 
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+July 10th 
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+If you can’t love yourself innately for who you are and keep working on yourself to finally enjoy
+who you are then your goalpost will always stay out of reach. Know that you are innately 
+love-able and work out of growth instead of avoidance. You need to walk towards positivity 
+instead of running from negativity. Same action, different mentalities. 
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+It’s time to fail on purpose. Fuck it and strive for more. If you are gonna make where others haven’t you have to do things others haven’t to get there. 
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+If you don’t care about living or dying then you aren’t living for yourself. You are just people pleasing and ruining your 
+life for others. Lock the fuck IN. Fuck their feelings or opinions and start living to earn being tired when you get in bed. </p>
+        </div>
+      </div>
+    </div>
+    <div id="win-story-9" class="window win" style="left:320px; top:234px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">Story 9 — Your Title Here</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-9')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Replace this with your Story 9. You can add multiple images, audio, and video below.</p>
+        </div>
+      </div>
+    </div>
+    <div id="win-story-10" class="window win" style="left:340px; top:252px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">Story 10 — Your Title Here</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-10')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Replace this with your Story 10. You can add multiple images, audio, and video below.</p>
+        </div>
+      </div>
+    </div>
+    <div id="win-story-11" class="window win" style="left:360px; top:270px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">Story 11 — Your Title Here</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-11')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Replace this with your Story 11. You can add multiple images, audio, and video below.</p>
+        </div>
+      </div>
+    </div>
+    <div id="win-story-12" class="window win" style="left:380px; top:288px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">Story 12 — Your Title Here</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-12')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Replace this with your Story 12. You can add multiple images, audio, and video below.</p>
+        </div>
+      </div>
+    </div>
+    <div id="win-story-13" class="window win" style="left:400px; top:306px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">Story 13 — Your Title Here</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-13')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Replace this with your Story 13. You can add multiple images, audio, and video below.</p>
+        </div>
+      </div>
+    </div>
+    <div id="win-story-14" class="window win" style="left:420px; top:324px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">Story 14 — Your Title Here</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-14')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Replace this with your Story 14. You can add multiple images, audio, and video below.</p>
+        </div>
+      </div>
+    </div>
+    <div id="win-story-15" class="window win" style="left:440px; top:342px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">Story 15 — Your Title Here</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-15')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Replace this with your Story 15. You can add multiple images, audio, and video below.</p>
+        </div>
+      </div>
+    </div>
+    <div id="win-story-16" class="window win" style="left:460px; top:360px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">Story 16 — Your Title Here</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-16')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        </div>
+      </div>
+    </div>
+    <div id="win-story-17" class="window win" style="left:480px; top:378px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">Story 17 — Your Title Here</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-17')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Replace this with your Story 17. You can add multiple images, audio, and video below.</p>
+        </div>
+      </div>
+    </div>
+    <div id="win-story-18" class="window win" style="left:500px; top:396px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">Story 18 — Your Title Here</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-18')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Replace this with your Story 18. You can add multiple images, audio, and video below.</p>
+        </div>
+      </div>
+    </div>
+    <div id="win-story-19" class="window win" style="left:520px; top:414px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">Story 19 — Your Title Here</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-19')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Replace this with your Story 19. You can add multiple images, audio, and video below.</p>
+        <figure class="story-media">
+          <img src="assets/sample1.jpg" alt="Sample 1" />
+          <figcaption>Sample image 1 — replace with your own.</figcaption>
+        </figure>
+        <figure class="story-media">
+          <img src="assets/sample2.jpg" alt="Sample 2" />
+          <figcaption>Sample image 2 — replace with your own.</figcaption>
+        </figure>
+        <div class="media-row">
+          <audio controls preload="metadata">
+            <source src="media/background.wav" type="audio/wav" />
+          </audio>
+          <video controls preload="metadata" style="max-width:260px; height:auto;">
+            <source src="media/intro.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+    <div id="win-story-20" class="window win" style="left:540px; top:432px; width:520px;">
+      <div class="title-bar" data-drag-handle>
+        <div class="title-bar-text">Story 20 — Your Title Here</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="uiClick(); closeWindow('win-story-20')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Replace this with your Story 20. You can add multiple images, audio, and video below.</p>
+        <figure class="story-media">
+          <img src="assets/sample2.jpg" alt="Sample 2" />
+          <figcaption>Sample image 2 — replace with your own.</figcaption>
+        </figure>
+        <figure class="story-media">
+          <img src="assets/sample3.jpg" alt="Sample 3" />
+          <figcaption>Sample image 3 — replace with your own.</figcaption>
+        </figure>
+        <div class="media-row">
+          <audio controls preload="metadata">
+            <source src="media/background.wav" type="audio/wav" />
+          </audio>
+          <video controls preload="metadata" style="max-width:260px; height:auto;">
+            <source src="media/intro.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  
+  <script src="script.js"></script>
+</body>
+</html>

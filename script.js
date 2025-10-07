@@ -79,26 +79,25 @@ function updateClock() {
   el.textContent = now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
 }
 
-/* Attempt to play background music respecting Chrome autoplay rules */
 function tryPlayBackground() {
-  const bg = document.getElementById("bg‑music");
   if (!bg) return;
   bg.volume = 0.6;
   bg.play().catch(() => {
-    // Autoplay with sound failed; try muted and unmute after user interaction
+    // if autoplay with sound fails, mute the audio and try again
     bg.muted = true;
     bg.play().then(() => {
-      const unmute = () => {
-        bg.muted = false;
+      // add event listeners to unmute after a user click/keypress
+      const enable = () => { 
+        bg.muted = false; 
+        document.removeEventListener('click', enable); 
+        document.removeEventListener('keydown', enable); 
       };
-      // Wait for a click or keydown to unmute once
-      document.addEventListener("click", unmute, { once: true });
-      document.addEventListener("keydown", unmute, { once: true });
-    }).catch(() => {
-      /* Nothing else to do.  User must manually start playback */
-    });
+      document.addEventListener('click', enable, { once: true });
+      document.addEventListener('keydown', enable, { once: true });
+    }).catch(() => {});
   });
 }
+
 
 /* Mute/unmute buttons */
 function initAudioControls() {

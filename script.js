@@ -58,6 +58,24 @@ function uiClick() {
       }
     }, 300);
   };
+const KEY = 'introPlayed';
+if (sessionStorage.getItem(KEY) === '1') {
+  // Don’t show overlay at all; call initDesktop immediately
+  document.getElementById('intro-overlay')?.remove();
+  if (typeof window.initDesktop === 'function') window.initDesktop();
+} else {
+  // After endIntro():
+  sessionStorage.setItem(KEY, '1');
+}
+function startBackgroundMusicSafely() {
+  const bgm = document.getElementById('bgm');
+  if (!bgm) return;
+  bgm.muted = false;
+  const p = bgm.play();
+  if (p && typeof p.then === 'function') {
+    p.catch(() => {/* ignore if user/device policy still blocks */});
+  }
+}
 
   // End on natural video finish
   video.addEventListener('ended', endIntro);

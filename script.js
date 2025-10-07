@@ -1,128 +1,141 @@
 let topZ = 10;
 
 function uiClick() {
-  const click = document.getElementById('click-snd');
+  const click = document.getElementById("click-snd");
   if (!click) return;
-  try { click.currentTime = 0; click.play(); } catch(e){}
+  try {
+    click.currentTime = 0;
+    click.play();
+  } catch (e) {
+    /* ignore */
+  }
 }
 
 function openWindow(id) {
   const el = document.getElementById(id);
   if (!el) return;
-  el.classList.add('open');
+  el.classList.add("open");
   focusWindow(id);
 }
+
 function closeWindow(id) {
   const el = document.getElementById(id);
   if (!el) return;
-  el.querySelectorAll('audio,video').forEach(m=>{ try{ m.pause(); }catch(e){} });
-  el.classList.remove('open');
+  // pause any media inside the window
+  el.querySelectorAll("audio,video").forEach((m) => { try { m.pause(); } catch (e) {} });
+  el.classList.remove("open");
 }
+
 function focusWindow(id) {
   const el = document.getElementById(id);
   if (!el) return;
-  topZ += 1; el.style.zIndex = String(topZ);
+  topZ += 1;
+  el.style.zIndex = String(topZ);
 }
 
+/* Make windows draggable via their title bars */
 function makeDraggable(winEl) {
-  const header = winEl.querySelector('[data-drag-handle]');
+  const header = winEl.querySelector("[data-drag-handle]");
   if (!header) return;
-  let startX=0, startY=0;
-  function onDown(e){
+  let startX = 0, startY = 0;
+
+  function onDown(e) {
     e.preventDefault();
     focusWindow(winEl.id);
-    startX = e.clientX; startY = e.clientY;
-    document.addEventListener('mousemove', onMove);
-    document.addEventListener('mouseup', onUp);
+    startX = e.clientX;
+    startY = e.clientY;
+    document.addEventListener("mousemove", onMove);
+    document.addEventListener("mouseup", onUp);
   }
-  function onMove(e){
+
+  function onMove(e) {
     e.preventDefault();
     const dx = e.clientX - startX;
     const dy = e.clientY - startY;
-    startX = e.clientX; startY = e.clientY;
+    startX = e.clientX;
+    startY = e.clientY;
     const rect = winEl.getBoundingClientRect();
-    winEl.style.left = (rect.left + dx) + 'px';
-    winEl.style.top = (rect.top + dy) + 'px';
+    winEl.style.left = rect.left + dx + "px";
+    winEl.style.top = rect.top + dy + "px";
   }
-  function onUp(){
-    document.removeEventListener('mousemove', onMove);
-    document.removeEventListener('mouseup', onUp);
+
+  function onUp() {
+    document.removeEventListener("mousemove", onMove);
+    document.removeEventListener("mouseup", onUp);
   }
-  header.addEventListener('mousedown', onDown);
+
+  header.addEventListener("mousedown", onDown);
 }
 
-function initDraggables(){ document.querySelectorAll('.window').forEach(makeDraggable); }
-
-function updateClock(){
-  const el = document.getElementById('clock'); if(!el) return;
-  const now = new Date(); el.textContent = now.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
-}
-setInterval(updateClock,1000); updateClock();
-
-const bg = document.getElementById('bg-music');
-const btnMute = document.getElementById('btn-mute');
-const btnUnmute = document.getElementById('btn-unmute');
-
-function tryPlayBackground(){
-  if(!bg) return;
-  bg.volume = 0.6;
-  bg.play().catch(()=>{
-    bg.muted = true;
-    bg.play().then(()=>{
-      const enable = ()=>{ bg.muted=false; document.removeEventListener('click', enable); document.removeEventListener('keydown', enable); };
-      document.addEventListener('click', enable, {once:true});
-      document.addEventListener('keydown', enable, {once:true});
-    }).catch(()=>{});
-  });
+function initDraggables() {
+  document.querySelectorAll(".window").forEach(makeDraggable);
 }
 
-if(btnMute) btnMute.addEventListener('click', ()=>{ uiClick(); if(bg){ bg.muted = true; }});
-if(btnUnmute) btnUnmute.addEventListener('click', ()=>{ uiClick(); if(bg){ bg.muted = false; bg.play().catch(()=>{}); }});
-
-if (btnMute) {
-  btnMute.addEventListener('click', ()=>{
-    uiClick();
-    if (bg) { bg.muted = true; }
-  });
+/* Update the taskbar clock every second */
+function updateClock() {
+  const el = document.getElementById("clock");
+  if (!el) return;
+  const now = new Date();
+  el.textContent = now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
 }
-if (btnUnmute) {
-  btnUnmute.addEventListener('click', ()=>{
-    uiClick();
-    if (bg) {
-      bg.muted = false;
-      bg.play().catch(()=>{});
-    }
-  });
-}
-// removed extra closing brace
 
-document.addEventListener('click', …);
-window.addEventListener('DOMContentLoaded', …);
-
+/* Attempt to play background music respecting Chrome autoplay rules */
 function tryPlayBackground() {
+  const bg = document.getElementById("bg‑music");
   if (!bg) return;
   bg.volume = 0.6;
   bg.play().catch(() => {
-    // if autoplay with sound fails, mute the audio and try again
+    // Autoplay with sound failed; try muted and unmute after user interaction
     bg.muted = true;
     bg.play().then(() => {
-      // add event listeners to unmute after a user click/keypress
-      const enable = () => { bg.muted = false; … };
-      document.addEventListener('click', enable, { once: true });
-      document.addEventListener('keydown', enable, { once: true });
-    }).catch(() => {});
+      const unmute = () => {
+        bg.muted = false;
+      };
+      // Wait for a click or keydown to unmute once
+      document.addEventListener("click", unmute, { once: true });
+      document.addEventListener("keydown", unmute, { once: true });
+    }).catch(() => {
+      /* Nothing else to do.  User must manually start playback */
+    });
   });
 }
 
-document.addEventListener('click', (e)=>{
+/* Mute/unmute buttons */
+function initAudioControls() {
+  const bg = document.getElementById("bg‑music");
+  const btnMute = document.getElementById("btn-mute");
+  const btnUnmute = document.getElementById("btn-unmute");
+  if (btnMute) {
+    btnMute.addEventListener("click", () => {
+      uiClick();
+      if (bg) bg.muted = true;
+    });
+  }
+  if (btnUnmute) {
+    btnUnmute.addEventListener("click", () => {
+      uiClick();
+      if (bg) {
+        bg.muted = false;
+        bg.play().catch(() => {});
+      }
+    });
+  }
+}
+
+/* Event delegation to play the click sound on icon and button interactions */
+document.addEventListener("click", (e) => {
   const trg = e.target;
-  if (trg.closest('.desktop-icon') || trg.closest('.title-bar-controls button') || trg.matches('button')) {
+  if (trg.closest(".desktop-icon") || trg.closest(".title-bar-controls button") || trg.matches("button")) {
     uiClick();
   }
-}, {capture:true});
+}, { capture: true });
 
-window.addEventListener('DOMContentLoaded', ()=>{
+/* Initialize when the DOM is ready */
+window.addEventListener("DOMContentLoaded", () => {
   initDraggables();
+  updateClock();
+  setInterval(updateClock, 1000);
+  initAudioControls();
   tryPlayBackground();
-  initIntroVideo();
+  // Remove call to undefined initIntroVideo();
 });

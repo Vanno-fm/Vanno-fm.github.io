@@ -36,3 +36,54 @@ body {
 .media-row { display:flex; gap:12px; margin-top:8px; }
 
 .window .title-bar[data-drag-handle] { cursor: move; }
+
+/* Intro overlay covers the whole page */
+#intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;            /* above everything */
+  background: #000;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+/* Make video fill the screen without borders */
+#intro-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;        /* crop while keeping aspect ratio */
+  display: block;
+}
+
+/* Optional: hide scroll and pointer events behind overlay */
+html.intro-active, body.intro-active {
+  overflow: hidden;
+}
+
+/* Skip button (optional) */
+#skip-intro {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  padding: .5rem .8rem;
+  font: 14px/1 system-ui, sans-serif;
+  border: 1px solid #fff8;
+  background: #0008;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* “Tap to start” fallback text when autoplay is blocked */
+#tap-to-start {
+  position: absolute;
+  inset: auto 0 20%;
+  margin-inline: auto;
+  width: max-content;
+  padding: .6rem .9rem;
+  font: 16px/1.2 system-ui, sans-serif;
+  color: #fff;
+  background: #0009;
+  border: 1px solid #fff6;
+  border-radius: 6px;
+}

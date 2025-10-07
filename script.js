@@ -9,66 +9,6 @@ function uiClick() {
   if (!click) return;
   try { click.currentTime = 0; click.play(); } catch(e){}
 }
-<script>
-(function () {
-  const overlay   = document.getElementById('intro-overlay');
-  const video     = document.getElementById('intro-video');
-  const skipBtn   = document.getElementById('skip-intro');
-  const tapPrompt = document.getElementById('tap-to-start');
-
-  // Prevent page scroll while intro plays
-  document.documentElement.classList.add('intro-active');
-  document.body.classList.add('intro-active');
-
-  // Some SPA/desktop code uses key/mouse listeners; keep focus off the video
-  video.setAttribute('aria-hidden', 'true');
-
-  // Attempt autoplay (muted)
-  const tryAutoplay = () =>
-    video.play().catch(() => {
-      // Autoplay blocked: ask user to tap/click
-      tapPrompt.hidden = false;
-      overlay.addEventListener('click', resumeAfterGesture, { once: true });
-      overlay.addEventListener('touchend', resumeAfterGesture, { once: true });
-    });
-
-  const resumeAfterGesture = () => {
-    tapPrompt.hidden = true;
-    video.play().catch(() => {
-      // If this fails, just skip
-      endIntro();
-    });
-  };
-
-  const endIntro = () => {
-    // Optional: fade out
-    overlay.style.transition = 'opacity 300ms ease';
-    overlay.style.opacity = '0';
-    setTimeout(() => {
-      overlay.remove();
-      document.documentElement.classList.remove('intro-active');
-      document.body.classList.remove('intro-active');
-
-      // If you have background music elsewhere, you can unmute and play it after user gesture
-      // e.g., startBackgroundMusicSafely();
-
-      // Initialize your Windows-98 desktop now
-      if (typeof window.initDesktop === 'function') {
-        window.initDesktop();
-      }
-    }, 300);
-  };
-
-  // End on natural video finish
-  video.addEventListener('ended', endIntro);
-
-  // Allow manual skip at any time
-  skipBtn.addEventListener('click', endIntro);
-
-  // Kick off autoplay attempt
-  tryAutoplay();
-})();
-</script>
 
 function openWindow(id) {
   const el = document.getElementById(id);

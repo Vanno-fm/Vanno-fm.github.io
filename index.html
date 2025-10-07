@@ -13,6 +13,37 @@
 
 
   <audio id="bg-music" src="media/background.wav" loop autoplay muted></audio>
+  
+<!-- Intro Video Overlay -->
+<div id="intro-overlay" aria-hidden="true">
+  <video id="intro-video"
+         autoplay
+         muted
+         playsinline
+         preload="auto"
+         tabindex="-1">
+    <source src="assets/intro/intro.webm" type="video/webm">
+    <source src="assets/intro/intro.mp4" type="video/mp4">
+  </video>
+
+  <button id="skip-intro" type="button">Skip</button>
+  <div id="tap-to-start" hidden>Tap to start</div>
+</div>
+
+<!-- Your desktop/app markup below -->
+
+
+  <div id="taskbar" class="window">
+    <div class="title-bar">
+      <div class="title-bar-text">Start</div>
+      <div class="title-bar-controls"></div>
+    </div>
+    <div class="window-body taskbar-body">
+      <button class="btn" id="btn-mute">🔇 Mute</button>
+      <button class="btn" id="btn-unmute">🔊 Unmute</button>
+      <div class="clock" id="clock"></div>
+    </div>
+  </div>
 
   <main id="desktop">
     <h1 class="sr-only">Desktop</h1>

@@ -36,3 +36,59 @@ body {
 .media-row { display:flex; gap:12px; margin-top:8px; }
 
 .window .title-bar[data-drag-handle] { cursor: move; }
+
+/* ===== Window resizing ===== */
+.win98.window {
+  /* already positioned absolutely in your build */
+  min-width: 220px;
+  min-height: 140px;
+}
+
+.win98.window.resizing {
+  user-select: none;
+  cursor: move; /* default during drag; individual handles override */
+}
+
+/* Invisible hit targets around edges/corners */
+.win98.window .resizer {
+  position: absolute;
+  z-index: 2;
+}
+
+/* Edges */
+.win98.window .resizer[data-dir="n"],
+.win98.window .resizer[data-dir="s"] {
+  left: 6px;
+  right: 6px;
+  height: 8px;
+}
+.win98.window .resizer[data-dir="n"] { top: -2px; cursor: ns-resize; }
+.win98.window .resizer[data-dir="s"] { bottom: -2px; cursor: ns-resize; }
+
+.win98.window .resizer[data-dir="e"],
+.win98.window .resizer[data-dir="w"] {
+  top: 6px;
+  bottom: 6px;
+  width: 8px;
+}
+.win98.window .resizer[data-dir="e"] { right: -2px; cursor: ew-resize; }
+.win98.window .resizer[data-dir="w"] { left: -2px;  cursor: ew-resize; }
+
+/* Corners */
+.win98.window .resizer[data-dir="ne"],
+.win98.window .resizer[data-dir="nw"],
+.win98.window .resizer[data-dir="se"],
+.win98.window .resizer[data-dir="sw"] {
+  width: 12px;
+  height: 12px;
+}
+
+.win98.window .resizer[data-dir="ne"] { top: -3px;  right: -3px;  cursor: nesw-resize; }
+.win98.window .resizer[data-dir="nw"] { top: -3px;  left: -3px;   cursor: nwse-resize; }
+.win98.window .resizer[data-dir="se"] { bottom: -3px; right: -3px; cursor: nwse-resize; }
+.win98.window .resizer[data-dir="sw"] { bottom: -3px; left: -3px;  cursor: nesw-resize; }
+
+/* Make content scroll if user shrinks window too small */
+.win98.window .content {
+  overflow: auto;
+}

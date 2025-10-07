@@ -79,6 +79,40 @@ function tryPlayBackground(){
 if(btnMute) btnMute.addEventListener('click', ()=>{ uiClick(); if(bg){ bg.muted = true; }});
 if(btnUnmute) btnUnmute.addEventListener('click', ()=>{ uiClick(); if(bg){ bg.muted = false; bg.play().catch(()=>{}); }});
 
+if (btnMute) {
+  btnMute.addEventListener('click', ()=>{
+    uiClick();
+    if (bg) { bg.muted = true; }
+  });
+}
+if (btnUnmute) {
+  btnUnmute.addEventListener('click', ()=>{
+    uiClick();
+    if (bg) {
+      bg.muted = false;
+      bg.play().catch(()=>{});
+    }
+  });
+}
+// removed extra closing brace
+
+document.addEventListener('click', …);
+window.addEventListener('DOMContentLoaded', …);
+
+function tryPlayBackground() {
+  if (!bg) return;
+  bg.volume = 0.6;
+  bg.play().catch(() => {
+    // if autoplay with sound fails, mute the audio and try again
+    bg.muted = true;
+    bg.play().then(() => {
+      // add event listeners to unmute after a user click/keypress
+      const enable = () => { bg.muted = false; … };
+      document.addEventListener('click', enable, { once: true });
+      document.addEventListener('keydown', enable, { once: true });
+    }).catch(() => {});
+  });
+}
 
 document.addEventListener('click', (e)=>{
   const trg = e.target;

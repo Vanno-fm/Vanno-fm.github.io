@@ -1,5 +1,9 @@
 let topZ = 10;
 
+function initIntroVideo() {
+  // placeholder: load or hide the intro video
+}
+
 function uiClick() {
   const click = document.getElementById('click-snd');
   if (!click) return;
@@ -78,7 +82,7 @@ function tryPlayBackground(){
 
 if(btnMute) btnMute.addEventListener('click', ()=>{ uiClick(); if(bg){ bg.muted = true; }});
 if(btnUnmute) btnUnmute.addEventListener('click', ()=>{ uiClick(); if(bg){ bg.muted = false; bg.play().catch(()=>{}); }});
-}
+
 
 document.addEventListener('click', (e)=>{
   const trg = e.target;

@@ -16,29 +16,95 @@ function uiClick() {
   const skipBtn   = document.getElementById('skip-intro');
   const tapPrompt = document.getElementById('tap-to-start');
 
+  // Guard: if overlay or video is missing, just continue to desktop
+  if (!overlay || !video) {
+    console.warn('[intro] Missing overlay/video, continuing.');
+    return safeEndIntro();
+  }
+
   // Prevent page scroll while intro plays
   document.documentElement.classList.add('intro-active');
   document.body.classList.add('intro-active');
 
-  // Some SPA/desktop code uses key/mouse listeners; keep focus off the video
-  video.setAttribute('aria-hidden', 'true');
+  // A hard failsafe so you never get stuck on black
+  const FAILSAFE_MS = 8000;
+  const failsafe = setTimeout(() => {
+    console.warn('[intro] Failsafe triggered; ending intro.');
+    safeEndIntro();
+  }, FAILSAFE_MS);
 
-  // Attempt autoplay (muted)
-  const tryAutoplay = () =>
-    video.play().catch(() => {
-      // Autoplay blocked: ask user to tap/click
-      tapPrompt.hidden = false;
-      overlay.addEventListener('click', resumeAfterGesture, { once: true });
-      overlay.addEventListener('touchend', resumeAfterGesture, { once: true });
-    });
+  function safeEndIntro() {
+    try {
+      clearTimeout(failsafe);
+    } catch {}
+    try {
+      overlay.style.transition = 'opacity 300ms ease';
+      overlay.style.opacity = '0';
+      setTimeout(() => {
+        overlay.remove?.();
+        document.documentElement.classList.remove('intro-active');
+        document.body.classList.remove('intro-active');
+        if (typeof window.initDesktop === 'function') {
+          window.initDesktop();
+        }
+        // If you unmute background music after gesture, call it here.
+        if (typeof window.startBackgroundMusicSafely === 'function') {
+          window.startBackgroundMusicSafely();
+        }
+      }, 320);
+    } catch (e) {
+      console.error('[intro] Error ending intro:', e);
+      // Worst-case just reveal the site
+      overlay?.remove?.();
+      document.documentElement.classList.remove('intro-active');
+      document.body.classList.remove('intro-active');
+      if (typeof window.initDesktop === 'function') window.initDesktop();
+    }
+  }
 
-  const resumeAfterGesture = () => {
-    tapPrompt.hidden = true;
-    video.play().catch(() => {
-      // If this fails, just skip
-      endIntro();
-    });
-  };
+  // If “Skip” exists, let it always end the intro
+  skipBtn?.addEventListener('click', safeEndIntro);
+
+  // Show “tap to start” if autoplay gets blocked
+  function requireGesture() {
+    tapPrompt && (tapPrompt.hidden = false);
+    const resume = () => {
+      tapPrompt && (tapPrompt.hidden = true);
+      overlay.removeEventListener('click', resume);
+      overlay.removeEventListener('touchend', resume);
+      video.play().catch((e) => {
+        console.warn('[intro] Play after gesture still failed:', e);
+        safeEndIntro();
+      });
+    };
+    overlay.addEventListener('click', resume, { once: true });
+    overlay.addEventListener('touchend', resume, { once: true });
+  }
+
+  // Cleanly finish on end
+  video.addEventListener('ended', safeEndIntro);
+
+  // If the file can’t load, don’t trap the user
+  video.addEventListener('error', (e) => {
+    console.warn('[intro] Video error event:', e);
+    safeEndIntro();
+  });
+
+  // If the video can start rendering, good sign; try to play again
+  video.addEventListener('canplay', () => {
+    // no-op; we already try to play below
+  });
+
+  // Kick off autoplay (muted)
+  // Important: your video tag MUST have muted + playsinline attributes
+  // <video id="intro-video" autoplay muted playsinline ...>
+  video.play().catch((err) => {
+    console.warn('[intro] Autoplay blocked or failed:', err);
+    requireGesture();
+  });
+
+})();
+</script>
 
   const endIntro = () => {
     // Optional: fade out
